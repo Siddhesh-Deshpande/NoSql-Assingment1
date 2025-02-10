@@ -105,7 +105,7 @@ ORDER BY
                 ELSE 0
             END)
     FROM keywords k WHERE k.id = r.id
-) desc ;
+) desc;
 -- problem 5
 select r.uri
 from revisionuri as r
