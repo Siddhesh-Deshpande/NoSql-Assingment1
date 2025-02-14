@@ -1,34 +1,3 @@
-create table keywords(
-    id int not null,
-    term text not null,
-    score real not null,
-    primary key(id,term)
-);
-create table revisionuri(
-    id int not null,
-    uri text not null,
-    primary key(id)
-);
--- The above schema is without fk constraints.
--- The following is used to view the executino time for each query
-\timing
-\copy keywords from '/home/siddhesh/Documents/Nosql Assingment 1/Wikipedia-EN-20120601_KEYWORDS.TSV' DELIMITER E'\t' CSV ENCODING 'UTF8';
-\copy revisionuri from '/home/siddhesh/Documents/Nosql Assingment 1/Wikipedia-EN-20120601_REVISION_URIS.TSV' DELIMITER E'\t' CSV ENCODING 'UTF8';
-
--- now we introduce fk constraints in a new database
-create table revisionuri(
-    id int not null,
-    uri text not null,
-    primary key(id)
-);
-create table keywords(
-    id int not null,
-    term text not null,
-    score real not null,
-    primary key(id,term),
-    constraint id_constraint foreign key (id)
-    references revisionuri(id)
-);
 -- Queries
 -- Problem 1
 select r.uri 
@@ -196,6 +165,3 @@ ORDER BY
             END)
     FROM keywords k WHERE k.id = r.id
 ) DESC;
-
-
-

@@ -1,0 +1,2 @@
+\copy keywords from '/home/siddhesh/Documents/Nosql Assingment 1/Wikipedia-EN-20120601_KEYWORDS.TSV' DELIMITER E'\t' CSV ENCODING 'UTF8';
+\copy revisionuri from '/home/siddhesh/Documents/Nosql Assingment 1/Wikipedia-EN-20120601_REVISION_URIS.TSV' DELIMITER E'\t' CSV ENCODING 'UTF8';

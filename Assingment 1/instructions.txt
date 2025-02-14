@@ -1,0 +1,4 @@
+1.First login as any of the prexisting users.
+2.Run the Files create_with_constraints.sql and create_without_constraints.sql this will create two databases along with respective tables in them . One will have foreign key constraints and other wont.
+3.Run the file populate.sql to insert data into the tables but remember to change the path in the queries as dataset might be in different path in your respective device.
+4.Now you can run queries for the respective problems from the queries.sql file.There are a total of 6 queries.
